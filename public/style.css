@@ -1,0 +1,69 @@
+
+/* style.css */
+table{
+    min-width: 500px;
+}
+
+table tr th{
+    text-align: left;
+    background: blue;
+    color: black;
+    padding: 5px 10px;
+}
+
+table tr td{
+    padding:5px 10px;
+    text-transform: capitalize;
+}
+
+table tr:not(:nth-child(even)){
+    background: #0003;
+}
+
+button{
+    cursor: pointer;
+    background: white;
+    border: solid 2px rgb(22, 113, 218);
+    padding: 4px 8px;
+    transition: .3s ease-in-out;
+    border-radius: 5px;
+}
+
+button:hover{
+    background: blue;
+    color:green;
+    letter-spacing: 2px;
+}
+
+h1{
+    text-transform: uppercase;
+}
+
+input{
+    border: solid 1px blue;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+select{
+    margin-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+    background:powderblue;
+    color: black;
+    padding: 8px 20px;
+    transition: .3s ease-in-out;
+}
+a:hover{
+    letter-spacing: 2px;
+    background:grey;
+    color: white;
+}
+
+a.but{
+    background: blueviolet;
+    width: fit-content;
+}

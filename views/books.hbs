@@ -1,0 +1,64 @@
+
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Books</title>
+		<meta name="description" content="form to add new books">
+		<meta name="author" content="Mark Tyers">
+		<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+		<link href="/style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<h1>Home</h1>			
+				<a href="/login">Log Out</a>			
+		</header>
+	<main>
+<p>
+		<a href='/addbooks'>Add Books</a>
+		</p>
+		<p>
+		<a class="but" href="/manageusers">
+		<button>Manage Users</button></a></p>
+		<p>
+			<form action="/lendbook" method="post">
+				<h2>Lend Book</h2>
+				<label>Select Book</label>
+				<select name="book">
+					{{#each avBooks}}
+					<option value='{{this.uuid}}'>{{this.name}}</option>
+					{{/each}}
+				</select>
+				<label>Select Student</label>
+				<select name="student">
+					{{#each students}}
+					<option value='{{this.user}}'>{{this.user}} - {{this.books}}</option>
+					{{/each}}
+				</select>
+				<button>Lend</button>
+			</form>
+		</p>
+		<p>
+			<h2>All Books</h2>
+			<table cellspacing="0">
+				<tr>
+					<th>Name</th>
+					<th>Author</th>
+					<th>Quantity</th>
+				</tr>
+				{{#each books}}
+				<tr>
+					<td>{{this.name}}</td>
+					<td>{{this.author}}</td>
+					<td>{{this.quantity}}</td>
+				</tr>
+				{{/each}}
+			</table>
+			
+		</p>
+		
+	</main>
+	</body>
+</html>

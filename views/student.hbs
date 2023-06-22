@@ -1,0 +1,39 @@
+
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Books</title>
+		<meta name="description" content="form to add new books">
+		<meta name="author" content="Mark Tyers">
+		<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+		<link href="/style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<h1>{{student.user}}</h1>			
+				<a href="/login">Log Out</a>			
+		</header>
+	<main>
+		<p>
+			<table cellspacing="0">
+				<tr>
+					<th>Name</th>
+					<th>Date Borrowed</th>
+					<th></th>
+				</tr>
+				{{#each student.books}}
+				<tr>
+					<td>{{this.name}}</td>
+					<td>{{this.date_borrowed}}</td>
+                    <td><form action="/returnbook/{{this.uuid}}" method='post'><button>Return Book</button></form></td>
+				</tr>
+				{{/each}}
+			</table>
+			
+		</p>
+		
+	</main>
+	</body>
+</html>

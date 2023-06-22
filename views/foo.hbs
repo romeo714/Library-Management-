@@ -1,0 +1,50 @@
+
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Home Page</title>
+		<meta name="description" content="form to add new books">
+		<meta name="author" content="Mark Tyers">
+		<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+		<link href="/style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+		<h1>User</h1>
+		<a href="/logout">Log out</a>
+		</header>
+		<main>
+		{{#if user}}
+			<p>Logged in as <strong>{{user}}</strong></p>
+		{{/if}}
+		  <p><a href="/">Home page</a></p>
+
+			<p style="margin-top:50px;display:flex;flex-direction:column;max-width:fit-content;">
+				<label>Search</label>
+				<input class="search" placeholder="Find Book Information" />
+			</p>
+
+		  <h2>My Books - {{user}}</h2>
+		  <table CELLSPACING="0">
+			  <tr>
+				  <th>Title</th>
+				  <th>Author</th>
+				  <th>Stocked</th>
+				  <th>Available</th>
+				  <th>Return Date</th>
+			  </tr>
+			  {{#each books}}
+			  <tr>
+				  <td>{{this.name}}</td>
+				  <td>{{this.author}}</td>
+				  <td>{{this.stocked}}</td>
+				  <td>{{this.available}}</td>
+				  <td>{{this.return_date}}</td>
+			  </tr>
+			  {{/each}}
+		  </table>
+		</main>
+	</body>
+</html>
